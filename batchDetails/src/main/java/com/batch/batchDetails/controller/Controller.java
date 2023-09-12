@@ -1,14 +1,21 @@
 package com.batch.batchDetails.controller;
 
+import com.batch.batchDetails.entity.Student;
+import com.batch.batchDetails.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/tuition")
 public class Controller {
     private final StudentService studentService;
 
     @Autowired
-    public StudentController(StudentService studentService) {
-
-
+    public Controller(StudentService studentService) {
         this.studentService =   studentService;
     }
 

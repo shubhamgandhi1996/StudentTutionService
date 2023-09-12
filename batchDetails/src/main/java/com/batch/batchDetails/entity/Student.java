@@ -1,13 +1,15 @@
 package com.batch.batchDetails.entity;
 
 
+import jakarta.persistence.*;
+
 import javax.annotation.processing.Generated;
 
 @Entity
 public class Student {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.Identity)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
 

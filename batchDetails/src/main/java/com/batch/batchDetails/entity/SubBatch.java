@@ -1,6 +1,12 @@
 package com.batch.batchDetails.entity;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.*;
+import jakarta.persistence.Id;
+
+import java.util.List;
+
 @Entity
 public class SubBatch {
 

@@ -1,7 +1,9 @@
 package com.batch.batchDetails.repository;
 
 import com.batch.batchDetails.entity.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public class StudentRepository extends JpaRepository<Student, Integer>{
+public interface StudentRepository extends JpaRepository<Student, Long> {
 
 }
+
