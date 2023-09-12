@@ -58,6 +58,18 @@ public class Controller {
         return ResponseEntity.notFound().build();
     }
 
+    @GetMapping("/subbatch/{subBatchId}")
+    public ResponseEntity<List<Student>> getStudentsBySubBatch(@PathVariable Long subBatchId) {
+        List<Student> students = studentService.getStudentsBySubBatch(subBatchId);
+
+        // Check if students exist and return them as a response
+        if (!students.isEmpty()) {
+            return ResponseEntity.ok(students);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     // Endpoint to delete a student by ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteStudent(@PathVariable Long id) {

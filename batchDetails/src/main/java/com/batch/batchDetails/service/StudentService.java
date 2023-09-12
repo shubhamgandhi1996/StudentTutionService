@@ -4,6 +4,7 @@ import com.batch.batchDetails.entity.Student;
 import com.batch.batchDetails.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -38,6 +39,11 @@ public class StudentService {
             return studentRepository.save(student);
         }
         return null; // Handle not found case appropriately
+    }
+
+    @Transactional(readOnly = true)
+    public List<Student> getStudentsBySubBatch(Long subBatchId) {
+        return studentRepository.findBySubBatchId(subBatchId);
     }
 
     public void deleteStudent(Long id) {
